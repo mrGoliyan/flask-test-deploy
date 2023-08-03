@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Next Page</title>
+</head>
+<body>
+    <h1>Next Page</h1>
+    <div id="output"></div>
+
+    <script>
+        fetch("/api/data")
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("output").innerText = data.message;
+        })
+        .catch(error => console.error(error));
+    </script>
+</body>
+</html>
